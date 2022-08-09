@@ -13,10 +13,11 @@ nav {
     color: greenyellow
 }
 
-/* MAIN */
+/* BODY */
 
 main {
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
     background-color: brown;
     display: flex;
     flex-direction: column;
@@ -57,6 +58,17 @@ form {
     margin-top: 20%;
 }
 
+/* CARD */
+
+.card {
+    margin-top: 1rem;
+    background-color: lightblue;
+    color: black;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
 
 /* FOOTER */
 
