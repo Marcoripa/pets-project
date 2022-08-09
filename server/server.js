@@ -3,6 +3,9 @@ const app = express();
 const { testConnection, syncronizeDb } = require("./models/index");
 testConnection();
 
+//Middleware that allows to use json
+app.use(express.json())
+
 //Import the Router
 const tasks = require("./routes/Tasks");
 
