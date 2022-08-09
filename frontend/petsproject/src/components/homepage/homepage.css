@@ -1,0 +1,69 @@
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: green;
+}
+
+.logo {
+    font-size: 40px;
+    color: greenyellow
+}
+
+/* MAIN */
+
+main {
+    height: 100vh;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white
+}
+
+form {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 25px;
+    display: flex;
+}
+
+#location-input {
+   width: 200px;
+   background-color: inherit;
+   border: none;
+   border-right: 3px solid black;
+}
+
+#address-input {
+    width: 200px;
+    background-color: inherit;
+    border: none;  
+    padding-left: 1rem;
+}
+
+#search-button {
+    border: none;  
+    border-radius: 100%;
+    background-color: orangered;
+    color: white;
+}
+
+#button-icon {
+    font-size: 28px;
+    margin-top: 20%;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: green;
+}
+
+h4 {
+    margin: 0;
+}
