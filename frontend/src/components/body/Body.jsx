@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../card/Card";
 import { BiSearch } from "react-icons/bi";
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 export default function Body() {
   const [data, setData] = useState([]);
@@ -49,20 +49,20 @@ export default function Body() {
         <h1>What are you up to today?</h1>
       ) : (
         data.map((item) => {
-          return <Card item={item} />;
+          return <MapContainer center={[item.Latitude, item.Longitude]} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {data.map(item => {
+            return (
+              <Marker key={item.id} position={[item.Latitude, item.Longitude]}/>
+            )
+          })}
+        </MapContainer>;
         })
       )}
-      {/* <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[51.505, -0.09]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer> */}
+      
     </main>
   );
 }
