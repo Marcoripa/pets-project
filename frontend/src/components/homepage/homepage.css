@@ -9,80 +9,94 @@ nav {
 }
 
 .logo {
-    font-size: 40px;
-    color: greenyellow
+  font-size: 40px;
+  color: greenyellow;
 }
 
 /* BODY */
 
 main {
-    min-height: 100vh;
-    max-height: fit-content;
-    background-color: brown;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white
+  min-height: 100vh;
+  max-height: fit-content;
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
 form {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 25px;
-    display: flex;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 25px;
+  display: flex;
 }
 
 #location-input {
-   width: 200px;
-   background-color: inherit;
-   border: none;
-   border-right: 3px solid black;
+  width: 200px;
+  background-color: inherit;
+  border: none;
+  border-right: 3px solid black;
 }
 
 #address-input {
-    width: 200px;
-    background-color: inherit;
-    border: none;  
-    padding-left: 1rem;
+  width: 200px;
+  background-color: inherit;
+  border: none;
+  padding-left: 1rem;
 }
 
 #search-button {
-    border: none;  
-    border-radius: 100%;
-    background-color: orangered;
-    color: white;
+  border: none;
+  border-radius: 100%;
+  background-color: orangered;
+  color: white;
 }
 
 #button-icon {
-    font-size: 28px;
-    margin-top: 20%;
+  font-size: 28px;
+  margin-top: 20%;
 }
 
 /* CARD */
 
 .card {
-    margin-top: 1rem;
-    background-color: lightblue;
-    color: black;
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: lightblue;
+  color: black;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.map-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-list {
+  width: 30%;
+  margin-top: 4rem;
+  margin-right: 2rem;
 }
 
 /* MAP */
 
 .leaflet-container {
-    width: 100%;
-    height: 100vh;
+  width: 50%;
+  height: 50vh;
+  margin: 4rem;
+  border: 2px solid black;
 }
 
 /* FOOTER */
 
 footer {
-    background-color: green;
+  background-color: green;
 }
 
 h4 {
-    margin: 0;
+  margin: 0;
 }

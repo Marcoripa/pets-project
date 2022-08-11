@@ -61,24 +61,19 @@ export default function Body() {
           <BiSearch id="button-icon" />
         </button>
       </form>
-      {/* {data == null ? (
-        <h1>What are you up to today?</h1>
-      ) : (
-        data.map((item) => {
-          return <MapContainer center={[item.Latitude, item.Longitude]} zoom={13} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {data.map(item => {
+      <section className="map-list">
+        <Map coordinates={coordinates} position={position} />
+        {position === [] ? <h1>Where are we going today?</h1> : 
+          <ul className="card-list">
+            {position.map(pos => {
             return (
-              <Marker key={item.id} position={[item.Latitude, item.Longitude]}/>
-            )
-          })}
-        </MapContainer>;
-        })
-      )} */}
-      <Map coordinates={coordinates} position={position} />
+              <Card pos={pos} />
+          )
+        })}
+          </ul>
+          }
+      </section>
+      
     </main>
   );
 }
