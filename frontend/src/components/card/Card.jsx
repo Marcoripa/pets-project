@@ -7,8 +7,8 @@ export default function Card({item}) {
               <img></img>
            </div>
            <div>
-              <h1>{item.Location}</h1>
-              <h3>{item.Address}</h3>
+              <h1>{item.name}</h1>
+              <h3>{item.address}</h3>
            </div>
        </section>
     )

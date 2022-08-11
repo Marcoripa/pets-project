@@ -1,26 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Card from "../card/Card";
-import { BiSearch } from "react-icons/bi";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import Map from "../map/Map";
+import {BiSearch} from "react-icons/bi";
+import { locations } from "../../locations";
 
 export default function Body() {
-  const [data, setData] = useState([]);
   const [location, setLocation] = useState("");
   const [address, setAddress] = useState("");
+  const [coordinates, setCoordinates] = useState([30, 2]);
+  const [position, setPosition] = useState([])
+
+  function success(position) {
+    setCoordinates([position.coords.latitude, position.coords.longitude]);
+  }
+  navigator.geolocation.getCurrentPosition(success);
+
+  // function collectData(e) {
+  //   e.preventDefault();
+  //   fetch("http://localhost:4000/tasks")
+  //     .then((response) => response.json())
+  //     .then((data) =>
+  //       setPosition(
+  //         data.filter(
+  //           (item) => item.Location === location || item.Address === address
+  //         )
+  //       )
+  //     );
+  //   setLocation("");
+  //   setAddress("");
+  // }
 
   function collectData(e) {
-    e.preventDefault();
-    fetch("http://localhost:4000/tasks")
-      .then((response) => response.json())
-      .then((data) =>
-        setData(
-          data.filter(
-            (item) => item.Location === location || item.Address === address
-          )
-        )
-      );
-    setLocation("");
-    setAddress("");
+    e.preventDefault()
+    setPosition(
+      locations.filter(
+        (item) => item.name === location || item.address === address
+      )
+    );
   }
 
   return (
@@ -45,7 +61,7 @@ export default function Body() {
           <BiSearch id="button-icon" />
         </button>
       </form>
-      {data == null ? (
+      {/* {data == null ? (
         <h1>What are you up to today?</h1>
       ) : (
         data.map((item) => {
@@ -61,8 +77,8 @@ export default function Body() {
           })}
         </MapContainer>;
         })
-      )}
-      
+      )} */}
+      <Map coordinates={coordinates} position={position} />
     </main>
   );
 }
